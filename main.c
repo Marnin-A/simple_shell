@@ -21,7 +21,7 @@ int main(void)
 		/* to be creating an exit cond. the user*/
 		if (strcmp(commds, "exit") == 0)
 		{
-			eprint("\n");
+			printf("logging out...\n");
 			break;
 		}
 		else if (strncmp(commds, "exit ", 5) == 0)
