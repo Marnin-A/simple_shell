@@ -26,4 +26,14 @@ void execute_pt(const char *uput);
 
 char **tok_input(const char *uput, int *argc);
 
+/* New printf prototype */
+int _printf(const char *format, ...);
+
+void int_to_str(int num, char *str, int buffer_size);
+
+int num_digits(int num);
+
+int _putchar(char c);
+
+
 #endif /* E_SHELL_H */

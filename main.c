@@ -5,15 +5,15 @@
  * Description: ux interface of Eshell.
  * Return: 0, if it's a succes.
  */
-int main(void)
+int main(int argc, char *argv,char *envp[])
 {
 	int isize = MAX_INPUT_SIZE;
 	char commds[MAX_INPUT_SIZE];
-	int ext_stat;
+	int ext_stat, envp_count = 0;
 
 	while (1)
 	{
-		printf("Eshell$ ");
+		_printf("Eshell$ ");
 		fgets(commds, isize, stdin);
 
 		commds[strlen(commds) - 1] = '\0';
@@ -21,7 +21,7 @@ int main(void)
 		/* to be creating an exit cond. the user*/
 		if (strcmp(commds, "exit") == 0)
 		{
-			printf("logging out...\n");
+			_printf("logging out...\n");
 			break;
 		}
 		else if (strncmp(commds, "exit ", 5) == 0)
@@ -29,6 +29,14 @@ int main(void)
 			ext_stat = atoi(commds + 5);
 
 			exit(ext_stat);
+		}
+		else if(strcmp(commds, "env") == 0)
+		{
+			while (envp[envp_count])
+			{
+				_printf("%s\n",envp[envp_count]);
+				envp_count++;
+			}
 		}
 
 		execute_pt(commds);
