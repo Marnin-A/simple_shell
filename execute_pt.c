@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * execute_pt - Function to execute a prompt.
- * @uput: Ptr to a character string input by the user.
- * Return: void
+ * execute_pt - Fxn to execute a prompt.
+ * @uput: Ptr to a char. string input by the user.
+ * Return: to void
  */
 void execute_pt(const char *uput)
 {

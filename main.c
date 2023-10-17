@@ -5,11 +5,11 @@
  * Description: ux interface of Eshell.
  * Return: 0, if it's a succes.
  */
-int main(void)
+int main(int argc, char *argv,char *envp[])
 {
 	int isize = MAX_INPUT_SIZE;
 	char commds[MAX_INPUT_SIZE];
-	int ext_stat;
+	int ext_stat, envp_count = 0;
 
 	while (1)
 	{
@@ -29,6 +29,14 @@ int main(void)
 			ext_stat = atoi(commds + 5);
 
 			exit(ext_stat);
+		}
+		else if(strcmp(commds, "env") == 0)
+		{
+			while (envp[envp_count])
+			{
+				printf("%s\n",envp[envp_count]);
+				envp_count++;
+			}
 		}
 
 		execute_pt(commds);
