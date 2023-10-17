@@ -13,7 +13,7 @@ int main(int argc, char *argv,char *envp[])
 
 	while (1)
 	{
-		_printf("Eshell$ ");
+		printf("Eshell$ ");
 		fgets(commds, isize, stdin);
 
 		commds[strlen(commds) - 1] = '\0';
@@ -21,7 +21,7 @@ int main(int argc, char *argv,char *envp[])
 		/* to be creating an exit cond. the user*/
 		if (strcmp(commds, "exit") == 0)
 		{
-			_printf("logging out...\n");
+			printf("logging out...\n");
 			break;
 		}
 		else if (strncmp(commds, "exit ", 5) == 0)
@@ -34,7 +34,7 @@ int main(int argc, char *argv,char *envp[])
 		{
 			while (envp[envp_count])
 			{
-				_printf("%s\n",envp[envp_count]);
+				printf("%s\n",envp[envp_count]);
 				envp_count++;
 			}
 		}
