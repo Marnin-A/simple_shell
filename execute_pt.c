@@ -29,11 +29,11 @@ void execute_pt(const char *uput)
 			exit(EXIT_FAILURE);
 		}
 
-		token = strtok((char *)uput, " ");
+		token = _strtok((char *)uput, " ");
 		while (token != NULL)
 		{
 			ux_commandz1[w] = token;
-			token = strtok(NULL, " ");
+			token = _strtok(NULL, " ");
 			w++;
 		}
 		ux_commandz1[w] = NULL;

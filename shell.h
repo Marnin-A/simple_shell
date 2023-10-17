@@ -7,7 +7,8 @@
 #include <sys/wait.h>
 #include <string.h>
 
-
+/* Get environment */
+extern char **environ;
 
 /* to explain input size to max */
 #define MAX_INPUT_SIZE 256
@@ -26,14 +27,13 @@ void execute_pt(const char *uput);
 
 char **tok_input(const char *uput, int *argc);
 
-/* New printf prototype */
-int _printf(const char *format, ...);
-
-void int_to_str(int num, char *str, int buffer_size);
+char *_strtok(char *str, const char *delim);
 
 int num_digits(int num);
 
 int _putchar(char c);
+
+char *_getline(void);
 
 
 #endif /* E_SHELL_H */
