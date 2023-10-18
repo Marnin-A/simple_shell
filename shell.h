@@ -35,5 +35,8 @@ int _putchar(char c);
 
 char *_getline(void);
 
+char *set_path(char *cd_path, char *exec);
+
+void execute_and_free(char *cd_path, char **ux_commandz1, char *exec);
 
 #endif /* E_SHELL_H */
